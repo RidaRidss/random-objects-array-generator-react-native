@@ -109,21 +109,25 @@ const array = [];
 const result = [];
 const markers = undefined;
 export default class App extends Component<Props> {
-  array = generator();
-  result = pickGeoPoints(array);
-  markers = result.map((marker, i) => {
-    const val = marker.split(",");
-
-    <Marker
-      key={i}
-      pinColor="#6B6813"
-      coordinate={{
-        latitude: Number(val[0]),
-        longitude: Number(val[1])
-      }}
-    />;
-  });
+  // array = generator();
+  // console.log("logging array" +array)
+  // result = pickGeoPoints(array);
+  // markers = result.map((marker, i) => {
+  //   const val = marker.split(",");
+  //   alert(val[0]);
+  //   <Marker
+  //     key={i}
+  //     pinColor="#6B6813"
+  //     coordinate={{
+  //       latitude: Number(val[0]),
+  //       longitude: Number(val[1])
+  //     }}
+  //   />;
+  // });
   render() {
+    array = generator();
+    // result = pickGeoPoints(array);
+    console.log(array, "logging");
     return (
       <View
         style={{
@@ -137,7 +141,7 @@ export default class App extends Component<Props> {
             latitudeDelta: 0.0059397161733585335,
             longitudeDelta: 0.005845874547958374
           }}
-          renderMarker={markers}
+          // renderMarker={markers}
           style={StyleSheet.absoluteFillObject}
           loadingEnabled
           showsBuildings

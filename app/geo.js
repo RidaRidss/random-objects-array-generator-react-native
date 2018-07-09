@@ -7,10 +7,16 @@
  */
 export function generateRandomPoints(center, radius, count) {
   var points = [];
+  var newpoints = [];
   for (var i = 0; i < count; i++) {
     points.push(generateRandomPoint(center, radius));
   }
-  return points;
+  newpoints = points.map(o => o.latitude + "," + o.longitude);
+  // newpoints = points.map(o =>
+  //   o.entries(o).map(([key, value]) => console.log(`${key} ${value}`))
+  // );
+  console.log(newpoints, "new points");
+  return newpoints;
 }
 
 /**

@@ -50,6 +50,7 @@ export function generator(max = 10, min = 1) {
     ...o,
     ...randomGeoPoints[i]
   }));
+  console.log(...randomGeoPoints[i], "logging result");
   return result;
 }
 
